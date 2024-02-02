@@ -1,0 +1,9 @@
+local M = {}
+
+M.keymaps = {}
+
+M.sets = {
+	vim.opt.guicursor = "",
+}
+
+return M
