@@ -31,7 +31,7 @@ vim.opt.updatetime = 50
 -- Enable access to the system clipboard
 vim.opt.clipboard = "unnamedplus"
 
-vim.opt.signcolumn = "yes" 
+vim.opt.signcolumn = "yes"
 
 vim.opt.swapfile = false
 vim.opt.laststatus = 3

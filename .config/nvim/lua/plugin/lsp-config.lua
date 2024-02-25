@@ -1,50 +1,49 @@
 return {
-    {
-        "williamboman/mason.nvim",
-        lazy = false,
-        config = function()
-             require("mason").setup()
-        end
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        lazy = false,
-        config = function()
-             require("mason-lspconfig").setup({
-                ensure_installed = {
-                    "gopls", -- go
-                    "pyright", -- python
-                    "lua_ls", -- lua
-                    "tsserver" -- javascript+typescript
-                }
-            })
-        end
-    },
-    {
-        "neovim/nvim-lspconfig",
-        lazy = false,
-        config = function()
-            local capabilities require("cmp_nvim_lsp").default_capabilities()
-            local lspconfig = require("lspconfig")
+	{
+		"williamboman/mason.nvim",
+		lazy = false,
+		config = function()
+			require("mason").setup()
+		end,
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		lazy = false,
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"gopls",
+					"pyright",
+					"lua_ls",
+					"eslint",
+					"tsserver",
+					"tailwindcss",
+					"rust_analyzer",
+				},
+			})
+		end,
+	},
+	{
+		"neovim/nvim-lspconfig",
+		lazy = false,
+		config = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            lspconfig.gopls.setup({
-                capabilities = capabilities,
-            })
+			local servers = {
+				"gopls",
+				"pyright",
+				"lua_ls",
+				"eslint",
+				"tsserver",
+				"tailwindcss",
+				"rust_analyzer",
+			}
 
-            lspconfig.pyright.setup({
-                capabilities = capabilities
-            })
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities
-            })
-            lspconfig.tsserver.setup({
-                capabilities = capabilities
-            })
-
-            lspconfig.eslint.setup({
-                capabilities = capabilities
-            })
-        end
-    }
+			for _, lsp in ipairs(servers) do
+				require("lspconfig")[lsp].setup({
+					capabilities = capabilities,
+				})
+			end
+		end,
+	},
 }
-

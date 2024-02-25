@@ -9,32 +9,17 @@ return {
 				commentStyle = { italic = false },
 				keywordStyle = { italic = false },
 				transparent = false,
-				theme = "wave",
 				colors = {
 					theme = {
-						wave = {
+						all = {
 							ui = {
-								bg_gutter = "#1F1F28",
+								bg_gutter = "none",
 							},
 						},
 					},
 				},
 			})
-			vim.cmd("colorscheme kanagawa")
-		end
-	},
-	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		config = function()
-			require("rose-pine").setup({
-				styles = {
-					bold = true,
-					italic = false,
-					transparency = false,
-				},
-			})
-			-- vim.cmd("colorscheme rose-pine")
+			-- vim.cmd("colorscheme kanagawa-wave")
 		end,
 	},
 }

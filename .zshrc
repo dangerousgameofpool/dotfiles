@@ -1,9 +1,9 @@
-# Created by newuser for 5.8.1
 
 PROMPT="[%n@%m %~]$ "
 
 alias c="clear"
 alias v="nvim"
+alias nb="newsboat"
 
 # Changing "ls" to "eza"
 alias ls='eza -al --color=always --group-directories-first' # my preferred listing
@@ -12,15 +12,7 @@ alias ll='eza -l --color=always --group-directories-first'  # long format
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
 alias l.='eza -a | egrep "^\."'
 
-# GO
-alias gr="go run"
-alias gmi="go mod init"
-alias gog="go get"
-
-if [ -d "/usr/local/go/bin" ] ;
-	then PATH="$PATH:/usr/local/go/bin"
-fi
-
+# let useful scripts I write or find run anywhere
 export PATH=$PATH:~/scripts
 
 # >>> conda initialize >>>
@@ -35,10 +27,22 @@ else
         export PATH="/home/layne/anaconda3/bin:$PATH"
     fi
 fi
+
+# Golang
+if [ -d "/usr/local/go/bin" ] ;
+	then PATH="$PATH:/usr/local/go/bin"
+fi
+
+# Rust/Cargo
+export PATH=$PATH:~/.cargo/bin/
 unset __conda_setup
 # <<< conda initialize <<<
 
-. "$HOME/.cargo/env"
+# Node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#WSL: open links in windows
+export BROWSER=wslview
+
