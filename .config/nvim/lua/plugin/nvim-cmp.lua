@@ -11,7 +11,7 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
+		-- event = "InsertEnter",
 		config = function()
 			local cmp = require("cmp")
 			require("luasnip.loaders.from_vscode").lazy_load()
@@ -24,12 +24,15 @@ return {
 				},
 				window = {
 					-- Enable these for a fancy bordered completion window.
+					-- NO THANKS THOUGH
+					-- NOT FOR ME
 					-- completion = cmp.config.window.border(),
 					-- documentation = cmp.config.window.bordered(),
 				},
 				experimental = {
 					ghost_text = true,
 				},
+
 				mapping = cmp.mapping.preset.insert({
 					["<C-j>"] = cmp.mapping.select_next_item(),
 					["<C-k>"] = cmp.mapping.select_prev_item(),
