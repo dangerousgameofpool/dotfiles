@@ -35,9 +35,9 @@ return {
 
     config = function(_, opts)
         require('telescope').setup(opts)
-        local builtin = require('telescope.builtin')
-        require('telescope').load_extension('undo')
-        require('telescope').load_extension('fzf')
+        local builtin = require 'telescope.builtin'
+        require('telescope').load_extension 'undo'
+        require('telescope').load_extension 'fzf'
         vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Live grep over project' })
         vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Search LSP diagnostics' })

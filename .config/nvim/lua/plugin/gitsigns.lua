@@ -5,6 +5,6 @@ return {
         vim.keymap.set('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<cr>', {})
     end,
     config = function()
-        require('gitsigns').setup({})
+        require('gitsigns').setup {}
     end,
 }

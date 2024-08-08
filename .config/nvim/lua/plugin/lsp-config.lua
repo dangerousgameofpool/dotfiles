@@ -18,6 +18,7 @@ return {
                     'gopls',
                     'pyright',
                     'lua_ls',
+                    'texlab',
                     'tsserver',
                     'rust_analyzer',
                 },
@@ -32,13 +33,15 @@ return {
             end,
             config = function()
                 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+                local on_attach
                 local servers = {
                     'gopls',
                     'pyright',
                     'lua_ls',
+                    'texlab',
                     'tsserver',
                     'rust_analyzer',
-                    -- 'clangd',
+                    'clangd',
                     'ocamllsp',
                     'volar',
                 }

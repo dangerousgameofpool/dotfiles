@@ -121,6 +121,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Go
+if [ -d "/usr/local/go/bin" ] ;
+	then PATH="$PATH:/usr/local/go/bin"
+fi
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/layne/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -138,3 +143,5 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/material.omp.json)"
