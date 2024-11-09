@@ -1,0 +1,19 @@
+return {
+    'folke/trouble.nvim',
+    event = 'VeryLazy',
+    config = function()
+        require('trouble').setup {
+            icons = true,
+            fold_open = 'v',
+            fold_closed = '>',
+            indent_lines = false,
+            signs = {
+                error = 'E',
+                warning = 'W',
+                hint = 'H',
+                information = 'i',
+            },
+            use_diagnostic_signs = false,
+        }
+    end,
+}
